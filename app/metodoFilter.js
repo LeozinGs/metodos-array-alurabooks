@@ -1,7 +1,6 @@
-// const btnFrontEnd = document.getElementById('btnFiltrarLivrosFront');
-const btnsFiltro = document.querySelectorAll('.btn');
+const botoesFiltro = document.querySelectorAll('.btn');
 
-btnsFiltro.forEach(elemento => {
+botoesFiltro.forEach(elemento => {
     elemento.addEventListener('click', () => {
         let valorBotao = elemento.value;
         filtrarLivros(valorBotao);
