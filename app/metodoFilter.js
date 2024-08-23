@@ -1,15 +1,12 @@
-const botoesFiltro = document.querySelectorAll('.btn');
+const botoes = document.querySelectorAll('.btn');
 
-botoesFiltro.forEach(elemento => {
-    elemento.addEventListener('click', () => {
-        let valorBotao = elemento.value;
-        filtrarLivros(valorBotao);
-    });
-});
+botoes.forEach(btn => btn.addEventListener('click', filtrarLivros));
+    
 
-console.log(btnsFiltro);
+function filtrarLivros() {
+    const elementoBtn = document.getElementById(this.id);
+    const categoria = elementoBtn.value;
+    let livrosFiltrados = categoria == 'disponivel' ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria);
 
-function filtrarLivros(valor) {
-    let livrosFiltrados = livros.filter(livro => livro.categoria == valor);
     exibirOsLivrosNaTela(livrosFiltrados);
 }
